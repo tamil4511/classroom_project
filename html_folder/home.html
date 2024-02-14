@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <!-- ----------------------------------------font- awesome of montserrat-------------------------------- -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" rel="stylesheet">
+        
+         <!--------------------------jquery ---------------------------->
+         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="../js_folder/home.js">
+    <link rel="stylesheet" href="../css_folder/home.css">
+    <script src="../js_folder/create_and_join.js"></script>
+    <script src="../js_folder/post.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row navbar">
+            <div class="col-6 d-flex align-items-center">
+                <img src="../image/bar.png" width="50px" height="50px" style="background-color: white;" class="rounded-circle" alt="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            </div>
+            <div class="col-6 d-flex justify-content-end align-items-center">
+                <img src="../image/learning-not-css.svg" alt="" class="rounded-circle shadow" width="50px" height="50px">
+            </div>
+        </div>
+
+        <div class="row" id="creation">
+            <div class="col d-flex justify-content-end"  >
+                <div class="row px-5" id="creation">
+                    <div class="col" style="position: relative;">
+                        <img src="../image/plus.png" alt="" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" width="45px" height="45px">
+                        <div>
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td style="padding: 1px 30px;" data-bs-toggle="modal" data-bs-target="#target4">join</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 1px 30px;"  data-bs-toggle="modal" data-bs-target="#target3">create</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <div class="container w-75">
+        <div class="row" id="contain-1">
+                    <div class="row d-flex" id="con"></div>
+                    
+            </div>
+        </div>
+    </div>
+   <!-------------------this is for off canvas-------------------->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onclick="close2()" id="close11"></button>
+        </div>
+        <div class="offcanvas-body">
+            <button class="bt" id="bt-1" onclick="visible('contain-2','contain-3','contain-1')">home</button>
+            <button class="bt" onclick="visible('contain-2','contain-1','contain-3')">profile</button>
+            <button class="bt" onclick="logout()">logout</button>
+        </div>
+      </div>
+
+
+
+
+      <div class="container px-3" id="contain-2">
+        <div class="row">
+            <div class="row-6 bk shadow justify-content-end d-flex">
+                <h2 class="bk-name" id="class-name">mca 1</h2>
+                <h2 class="bk-name">people</h2>
+                <div class="ccode" style="
+                width: 100%;
+                height: 150px;
+                padding-top: 100px;
+                color: white;">
+                    <h3>CODE : <span id="class-code"></span></h3>
+                </div>
+            </div>
+            <div class="row-4">
+                <button class="post" data-bs-toggle="modal" data-bs-target="#target5">post</button>
+            </div>
+            <div class="row-8 my-5 rounded-4 p-4" >
+                <div class="row" id="postsContainer">
+                    <div class="row">
+                        <div class="col-2 col-md-1">
+                            <img src="../image/image2.webp" alt="" width="50px" height="50px" class="rounded-circle">
+                        </div>
+                        <div class="col-2">
+                            <h6>tamilarasu</h6>
+                            <p>11.12.1212</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <h3>title</h3>
+                        </div>
+                        <div class="row-6 shadow d-flex">
+                            <p>tamil arasu is a good boy</p>
+                            <img src="../image/download.webp" alt="" width="30px" height="30px" class="mx-2" data-bs-toggle="tooltip" title="Download">
+        
+                        </div>
+                    </div>
+                    <div class="row-12 d-flex mt-5">
+                        <div class="col-3 col-md-1">
+                            <img src="../image/image2.webp" width="50px" height="50px" class="rounded-circle" alt="">
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="rounded-4 p-2" style="width: 100%;" placeholder="Enter your comment">
+                        </div>
+                        <div class="col px-3 py-1">
+                            <img src="../image/send.png" alt="" width="20px" height="20px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+      <!----------------------this is for profile-->
+      <div class="container mt-4  vh-100" id="contain-3">
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <div class="text-center bg-body-secondary rounded-5">
+                    <div class="d-flex justify-content-center pt-4">
+                        <section style="position: relative;" class="d-flex justify-content-center">
+                            <form action="" id="image_upload" enctype="multipart/form-data">
+                                <label for="profile-image-upload" style="position: relative;">
+                                    <img src="../image/image2.webp" id="profileImage" class="rounded-circle position-relative" alt="" style="width: 300px; height: 300px;">
+                                    <div class="con">
+                                        <img src="../image/plus.png" class="position-absolute rounded-circle" alt="" style="width: 55px; height: 55px; bottom: 0.5px; right: 70px; background-color: white; cursor: pointer;">
+                                    </div>
+                                </label>
+                                <h6 class="my-2 p-3" style="color:red">NOTE:<span style="color:black">select the image using + sign, then click the upload button</span></h6>
+
+                                <input type="file" id="profile-image-upload" style="display: none;" />
+                                <button type="button" onclick="uploadImage()" style="background-color: #113A5D; color: whitesmoke;" class="rounded-2 p-2">Upload Image</button>
+                            </form>
+                            
+                            
+                        </section>
+                    </div>
+                    <h1 class="pt-3" id="user-name"></h1>
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#target2" style="background-color: #113A5D; color: whitesmoke;">Edit Profile</button>
+                </div>
+                <div class="col bg-body-secondary">
+                    <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
+                        <div class="accordion-item mb-5">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed bg-body-secondary rounded-4" id="cpassword-close" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                    aria-expanded="false" aria-controls="flush-collapseThree">
+                                    Change Password
+                                </button>
+                            </h2>
+
+                            <!---------------------password changing sections ---------------------------------->
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <form id="changepassword">
+                                    <div class="row py-3 px-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control shadow-none" id="oldpassword"
+                                                name="username" placeholder="oldpassword"
+                                                style="background-color:#e0e0e0">
+                                            <label for="floatingInput" class="ms-2"
+                                                style="mix-blend-mode: multiply;">Old Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="row py-3 px-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control shadow-none" id="newpassword"
+                                                name="username" placeholder="newpassword"
+                                                style="background-color:#e0e0e0">
+                                            <label for="floatingInput" class="ms-2"
+                                                style="mix-blend-mode: multiply;">Retype the Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="row btn-span px-5 py-3">
+                                        <button class="btn shadow py-3 px-2 rounded-4" onclick="password(event)" type="button" id="button"
+                                        style="background-color: #113A5D; color: whitesmoke;">Change Password</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col vh-100">
+                <!-- this is personal details of profile -->
+                <div
+                    class="profile bg-body-secondary col text-center justify-content-center align-items-center mt-3 pt-3 rounded-5">
+                    <div class="row m-3">
+                        <span class=" fw-bold fs-1 ">PERSONAL DETAILS</span>
+                    </div>
+                    <table class="table text-center rounded-5" style="background-color: #fff1f1;">
+                        <tbody>
+                            <tr>
+                                <th class="py-4">First Name</th>
+                                <td class="py-4" id="firstname1">NA</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">Last Name</th>
+                                <td class="py-4" id="lastname1">NA</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">Mobileno</th>
+                                <td class="py-4" id="mobileno1">NA</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">DOB</th>
+                                <td class="py-4" id="dob1">NA</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">Address</th>
+                                <td class="py-4" id="address1">NA</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">District</th>
+                                <td class="py-4" id="district1">NA</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">Pincode</th>
+                                <td class="py-4" id="pincode1">NA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal for changing the personal details ------------------>
+    <div class="modal fade" id="target2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Profile</h1>
+                    <button type="button" class="btn-close" id="close-model" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profile">
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="firstname" name="firstname"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">First
+                                    Name</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="lastname" name="lastname"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">Last
+                                    Name</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="mobileno" name="mobileno"
+                                    placeholder="Password" style="background-color:#ECE6E6">
+                                <label for="floatingPassword" class="ms-2"
+                                    style="mix-blend-mode: multiply;">mobileno</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="date" class="form-control shadow-none" id="dob" name="dob"
+                                    placeholder="Password" style="background-color:#ECE6E6">
+                                <label for="floatingPassword" class="ms-2" style="mix-blend-mode: multiply;">dob</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="address" name="address"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2"
+                                    style="mix-blend-mode: multiply;">LandMark</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="district" name="district"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2"
+                                    style="mix-blend-mode: multiply;">District</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="pincode" name="pincode"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2"
+                                    style="mix-blend-mode: multiply;">pincode</label>
+                            </div>
+                        </div>
+                        <div class="row btn-span px-5 py-2">
+                            <button class="btn btn-primary shadow py-3 mx-5 px-5 w-50" type="button" onclick="ts(event)" id="btn">update</button>
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--this is for create a class--------------------->
+    <div class="modal fade" id="target3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Class</h1>
+                    <button type="button" class="btn-close" id="close-model1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="create_class" enctype="multipart/form-data">
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="classname" name="classname"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">Classname</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="file" class="form-control shadow-none" id="classprofile" name="classprofile"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                    <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">class profile</label>
+                            </div>
+                        </div>
+                        <div class="row btn-span px-5 py-2">
+                            <button class="btn btn-primary shadow py-3 mx-5 px-5 w-50" type="submit"  id="btn">create</button>
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #region     this is for join class-->
+    <div class="modal fade" id="target4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Join Class</h1>
+                    <button type="button" class="btn-close" id="close-model" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="join_class">
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="join_code" name="join_code"
+                                    placeholder="name@example.com" style="background-color:#ECE6E6">
+                                <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">Class Code</label>
+                            </div>
+                        </div>
+                        <div class="row btn-span px-5 py-2">
+                            <button class="btn btn-primary shadow py-3 mx-5 px-5 w-50" type="submit" id="btn">join</button>
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------------this is for post -->
+    <div class="modal fade" id="target5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">POST</h1>
+                    <button type="button" class="btn-close" id="post-model" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="post_form" enctype="multipart/form-data">
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control shadow-none" id="title" name="title" placeholder="Title" style="background-color:#ECE6E6">
+                                <label for="title" class="ms-2" style="mix-blend-mode: multiply;">TITLE</label>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="form-floating">
+                                <input type="file" class="form-control shadow-none" id="sfile" name="sfile" style="background-color:#ECE6E6">
+                                <label for="sfile" class="ms-2" style="mix-blend-mode: multiply;">File</label>
+                            </div>
+                        </div>
+                        <div class="row btn-span px-5 py-2">
+                            <button class="btn btn-primary shadow py-3 mx-5 px-5 w-50" type="submit" id="btn">POST</button>
+                        </div>  
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var t=document.getElementById("contain-2");
+        var s=document.getElementById("contain-3");
+        t.style.display='none';
+        s.style.display='none';
+        function visible(a, b, c) {
+    var t = document.getElementById(a);
+    var s = document.getElementById(b);
+    var r = document.getElementById(c);
+    
+    t.style.display = 'none';
+    s.style.display = 'none';
+    r.style.display = 'block';
+
+    // Set the display property of 'join' based on the condition
+    var joinElement = document.getElementById('creation');
+    
+}
+function close2()
+{
+document.getElementById('close11').click();
+}
+    </script>
+
+</body>
+</html>

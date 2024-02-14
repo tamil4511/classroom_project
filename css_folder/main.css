@@ -1,0 +1,8 @@
+body {
+    font-family:'Montserrat' !important;
+}
+@media (max-width: 767px) {
+    .home_image {
+        display: none;
+    }
+}

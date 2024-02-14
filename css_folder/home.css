@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+
+.navbar
+{
+  background-image: radial-gradient(circle at center center, transparent,rgb(0,0,0)),linear-gradient(300deg, rgba(198, 198, 198,0.05) 0%, rgba(198, 198, 198,0.05) 50%,rgba(11, 11, 11,0.05) 50%, rgba(11, 11, 11,0.05) 100%),linear-gradient(64deg, rgba(54, 54, 54,0.05) 0%, rgba(54, 54, 54,0.05) 50%,rgba(132, 132, 132,0.05) 50%, rgba(132, 132, 132,0.05) 100%),linear-gradient(17deg, rgba(57, 57, 57,0.05) 0%, rgba(57, 57, 57,0.05) 50%,rgba(128, 128, 128,0.05) 50%, rgba(128, 128, 128,0.05) 100%),linear-gradient(332deg, rgba(97, 97, 97,0.05) 0%, rgba(97, 97, 97,0.05) 50%,rgba(85, 85, 85,0.05) 50%, rgba(85, 85, 85,0.05) 100%),linear-gradient(148deg, rgba(237, 237, 237,0.05) 0%, rgba(237, 237, 237,0.05) 50%,rgba(211, 211, 211,0.05) 50%, rgba(211, 211, 211,0.05) 100%),linear-gradient(142deg, rgba(168, 168, 168,0.05) 0%, rgba(168, 168, 168,0.05) 50%,rgba(32, 32, 32,0.05) 50%, rgba(32, 32, 32,0.05) 100%),linear-gradient(15deg, rgba(225, 225, 225,0.05) 0%, rgba(225, 225, 225,0.05) 50%,rgba(228, 228, 228,0.05) 50%, rgba(228, 228, 228,0.05) 100%),linear-gradient(5deg, rgba(104, 104, 104,0.05) 0%, rgba(104, 104, 104,0.05) 50%,rgba(43, 43, 43,0.05) 50%, rgba(43, 43, 43,0.05) 100%),radial-gradient(circle at center center, hsl(290,5%,8%),hsl(290,5%,8%));
+}
+
+
+#offcanvasScrolling
+{
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.snip1336 {
+  font-family: 'Roboto', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.4em;
+  background-color: rgb(2, 2, 2);
+  transition: box-shadow 0.3s ease;
+  border-radius: 20px;
+}
+
+.snip1336 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.snip1336 img {
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.85;
+}
+.snip1336 figcaption {
+  width: 100%;
+  background-image: radial-gradient(circle at 15% 55%, hsla(164,0%,78%,0.03) 0%, hsla(164,0%,78%,0.03) 15%,transparent 15%, transparent 100%),radial-gradient(circle at 89% 23%, hsla(164,0%,78%,0.03) 0%, hsla(164,0%,78%,0.03) 60%,transparent 60%, transparent 100%),radial-gradient(circle at 58% 94%, hsla(164,0%,78%,0.03) 0%, hsla(164,0%,78%,0.03) 48%,transparent 48%, transparent 100%),radial-gradient(circle at 54% 93%, hsla(164,0%,78%,0.03) 0%, hsla(164,0%,78%,0.03) 42%,transparent 42%, transparent 100%),radial-gradient(circle at 53% 32%, hsla(164,0%,78%,0.03) 0%, hsla(164,0%,78%,0.03) 24%,transparent 24%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+  padding: 25px;
+  position: relative;
+}
+.snip1336 figcaption:before {
+  position: absolute;
+  content: '';
+  bottom: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 55px 0 0 400px;
+  border-color: transparent transparent transparent rgb(2, 2, 2);
+}
+.snip1336 figcaption a {
+  padding: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  margin: 10px 0;
+  display: inline-block;
+  opacity: 0.65;
+  width: 47%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.snip1336 figcaption a:hover {
+  opacity: 1;
+}
+.snip1336 .profile {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  z-index: 1;
+  max-width: 90px;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  
+}
+
+.snip1336 h2 {
+    text-transform: uppercase;
+  margin: 0 0 5px;
+  font-weight: 300;
+}
+.snip1336 h2 span {
+  display: block;
+  font-size: 0.5em;
+  color: #2980b9;
+}
+
+
+
+/*---------------------------------------------*/
+
+.snip1336:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+.bk
+{
+  background-image: radial-gradient(circle at 29% 55%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 4%,transparent 4%, transparent 44%,transparent 44%, transparent 100%),radial-gradient(circle at 85% 89%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 52%,transparent 52%, transparent 100%),radial-gradient(circle at 6% 90%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 53%,transparent 53%, transparent 64%,transparent 64%, transparent 100%),radial-gradient(circle at 35% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 6%,transparent 6%, transparent 98%,transparent 98%, transparent 100%),radial-gradient(circle at 56% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 16%,transparent 16%, transparent 23%,transparent 23%, transparent 100%),radial-gradient(circle at 42% 0%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 3%,transparent 3%, transparent 26%,transparent 26%, transparent 100%),radial-gradient(circle at 29% 28%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 75%,transparent 75%, transparent 100%),radial-gradient(circle at 77% 21%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 35%,transparent 35%, transparent 55%,transparent 55%, transparent 100%),radial-gradient(circle at 65% 91%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 46%,transparent 46%, transparent 76%,transparent 76%, transparent 100%),linear-gradient(45deg, rgb(83, 91, 235),rgb(76, 11, 174));
+  width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0;
+}
+.bk-name
+{
+  text-transform: uppercase;
+  width: 100%;
+  height: 150px;
+  padding-top: 100px;
+  color: white;
+}
+.bt
+{
+  width: 60%;
+  margin-left:80px;
+  margin-top: 20px;
+  padding: 15px;
+  font-weight: 800;
+  font-size: 20px;
+  background-color: #384358;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+.bt:hover{
+  background-color: #05161A;
+  color: white;
+  cursor: pointer;
+}
+#bt-1
+{
+  margin-top:70px;
+}
+.post
+{
+margin-top: 40px;
+float: right;
+padding: 10px;
+text-transform: uppercase;
+font-weight: 700;
+background-color: #1dbbdf;
+border: 0;
+border-radius: 10px;
+}
