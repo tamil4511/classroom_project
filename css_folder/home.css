@@ -149,6 +149,10 @@
   color: white;
   cursor: pointer;
 }
+img
+{
+  object-fit: cover;
+}
 #bt-1
 {
   margin-top:70px;
@@ -164,6 +168,5 @@ background-color: #4cd2ede9;
 border: 0;
 border-radius: 10px;
 }
-
 /*---------------------------------------------*/
 
