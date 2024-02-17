@@ -22,4 +22,19 @@ if(isset($_POST['login'])) {
     header('Content-Type: application/json'); // Set Content-Type header
     echo json_encode($res);
 }
+
+
+
+if(isset($_POST['logout']))
+{
+    session_destroy();
+// Provide a response of successful logout
+$response = [
+    'status' => 200,
+    'message' => 'Logout successful',
+];
+
+echo json_encode($response);
+return;
+}
 ?>

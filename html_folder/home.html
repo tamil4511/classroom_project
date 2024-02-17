@@ -20,10 +20,10 @@
         
          <!--------------------------jquery ---------------------------->
          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="stylesheet" href="../js_folder/home.js">
     <link rel="stylesheet" href="../css_folder/home.css">
     <script src="../js_folder/create_and_join.js"></script>
     <script src="../js_folder/post.js"></script>
+    <script src="../js_folder/profile.js"></script>
 </head>
 <body>
     <div class="container">
@@ -32,13 +32,13 @@
                 <img src="../image/bar.png" width="50px" height="50px" style="background-color: white;" class="rounded-circle" alt="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
             </div>
             <div class="col-6 d-flex justify-content-end align-items-center">
-                <img src="../image/learning-not-css.svg" alt="" class="rounded-circle shadow" width="50px" height="50px">
+                <img src="../image/profile_image.jpg" alt="" class="rounded-circle shadow" width="50px" height="50px" id="profile-2">
             </div>
         </div>
 
         <div class="row" id="creation">
             <div class="col d-flex justify-content-end"  >
-                <div class="row px-5" id="creation">
+                <div class="row px-5" id="create-join">
                     <div class="col" style="position: relative;">
                         <img src="../image/plus.png" alt="" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" width="45px" height="45px">
                         <div>
@@ -74,18 +74,17 @@
         <div class="offcanvas-body">
             <button class="bt" id="bt-1" onclick="visible('contain-2','contain-3','contain-1')">home</button>
             <button class="bt" onclick="visible('contain-2','contain-1','contain-3')">profile</button>
-            <button class="bt" onclick="logout()">logout</button>
+            <button class="bt" id="logout">logout</button>
         </div>
       </div>
 
 
 
 
-      <div class="container px-3" id="contain-2">
+      <div class="container px-3 my-5" id="contain-2">
         <div class="row">
             <div class="row-6 bk shadow justify-content-end d-flex">
-                <h2 class="bk-name" id="class-name">mca 1</h2>
-                <h2 class="bk-name">people</h2>
+                <h2 class="bk-name mx-3" id="class-name"></h2>
                 <div class="ccode" style="
                 width: 100%;
                 height: 150px;
@@ -97,9 +96,9 @@
             <div class="row-4">
                 <button class="post" data-bs-toggle="modal" data-bs-target="#target5">post</button>
             </div>
-            <div class="row-8 my-5 rounded-4 p-4" >
+            <div class="row-8 rounded-4 p-4" >
                 <div class="row" id="postsContainer">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-2 col-md-1">
                             <img src="../image/image2.webp" alt="" width="50px" height="50px" class="rounded-circle">
                         </div>
@@ -118,17 +117,27 @@
         
                         </div>
                     </div>
+                    <div class="row my-4">
+                        <div class="col-1">
+                            <img src="../image/image2.webp" width="50px" height="50px" class="rounded-circle" alt="">
+                        </div>
+                        <div class="col">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quaerat in, aperiam rerum ducimus, voluptas, quasi minus obcaecati eius modi error. Perferendis qui officia reprehenderit aperiam libero adipisci numquam iste.</p>
+                        </div>
+                    </div>
                     <div class="row-12 d-flex mt-5">
                         <div class="col-3 col-md-1">
                             <img src="../image/image2.webp" width="50px" height="50px" class="rounded-circle" alt="">
                         </div>
-                        <div class="col-8">
-                            <input type="text" class="rounded-4 p-2" style="width: 100%;" placeholder="Enter your comment">
-                        </div>
-                        <div class="col px-3 py-1">
-                            <img src="../image/send.png" alt="" width="20px" height="20px">
-                        </div>
-                    </div>
+                        <form action="" id="comment_post">
+                            <div class="col-8">
+                                <input type="text" class="rounded-4 p-2" style="width: 100%;" id="comment" placeholder="Enter your comment">
+                            </div>
+                            <div class="col px-3 py-1">
+                                <img src="../image/send.png" alt="" type="submit" width="20px" height="20px">
+                            </div>
+                        </form>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -140,20 +149,20 @@
       <!----------------------this is for profile-->
       <div class="container mt-4  vh-100" id="contain-3">
         <div class="row">
-            <div class="col-12 col-lg-5">
+            <div class="col col-lg-5">
                 <div class="text-center bg-body-secondary rounded-5">
                     <div class="d-flex justify-content-center pt-4">
                         <section style="position: relative;" class="d-flex justify-content-center">
                             <form action="" id="image_upload" enctype="multipart/form-data">
                                 <label for="profile-image-upload" style="position: relative;">
-                                    <img src="../image/image2.webp" id="profileImage" class="rounded-circle position-relative" alt="" style="width: 300px; height: 300px;">
+                                    <img src="../image/profile_image.jpg" id="profile-1" class="rounded-circle position-relative" alt="" style="width: 300px; height: 300px;">
                                     <div class="con">
                                         <img src="../image/plus.png" class="position-absolute rounded-circle" alt="" style="width: 55px; height: 55px; bottom: 0.5px; right: 70px; background-color: white; cursor: pointer;">
                                     </div>
                                 </label>
                                 <h6 class="my-2 p-3" style="color:red">NOTE:<span style="color:black">select the image using + sign, then click the upload button</span></h6>
 
-                                <input type="file" id="profile-image-upload" style="display: none;" />
+                                <input type="file" id="profile-image-upload" name="profileImage" style="display: none;" />
                                 <button type="button" onclick="uploadImage()" style="background-color: #113A5D; color: whitesmoke;" class="rounded-2 p-2">Upload Image</button>
                             </form>
                             
@@ -163,169 +172,61 @@
                     <h1 class="pt-3" id="user-name"></h1>
                     <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#target2" style="background-color: #113A5D; color: whitesmoke;">Edit Profile</button>
                 </div>
-                <div class="col bg-body-secondary">
-                    <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
-                        <div class="accordion-item mb-5">
-                            <h2 class="accordion-header" id="flush-headingThree">
-                                <button class="accordion-button collapsed bg-body-secondary rounded-4" id="cpassword-close" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                    aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Change Password
-                                </button>
-                            </h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
+                    <div class="accordion-item mb-5">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed bg-body-secondary rounded-4" id="cpassword-close" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                aria-expanded="false" aria-controls="flush-collapseThree">
+                                Change Password
+                            </button>
+                        </h2>
 
-                            <!---------------------password changing sections ---------------------------------->
-                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <form id="changepassword">
-                                    <div class="row py-3 px-4">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control shadow-none" id="oldpassword"
-                                                name="username" placeholder="oldpassword"
-                                                style="background-color:#e0e0e0">
-                                            <label for="floatingInput" class="ms-2"
-                                                style="mix-blend-mode: multiply;">Old Password</label>
-                                        </div>
+                        <!---------------------password changing sections ---------------------------------->
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <form id="changepassword">
+                                <div class="row py-3 px-4">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control shadow-none" id="oldpassword"
+                                            name="username" placeholder="oldpassword"
+                                            style="background-color:#e0e0e0">
+                                        <label for="floatingInput" class="ms-2"
+                                            style="mix-blend-mode: multiply;">Old Password</label>
                                     </div>
-                                    <div class="row py-3 px-4">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control shadow-none" id="newpassword"
-                                                name="username" placeholder="newpassword"
-                                                style="background-color:#e0e0e0">
-                                            <label for="floatingInput" class="ms-2"
-                                                style="mix-blend-mode: multiply;">Retype the Password</label>
-                                        </div>
+                                </div>
+                                <div class="row py-3 px-4">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control shadow-none" id="newpassword"
+                                            name="username" placeholder="newpassword"
+                                            style="background-color:#e0e0e0">
+                                        <label for="floatingInput" class="ms-2"
+                                            style="mix-blend-mode: multiply;">New Password</label>
                                     </div>
-                                    <div class="row btn-span px-5 py-3">
-                                        <button class="btn shadow py-3 px-2 rounded-4" onclick="password(event)" type="button" id="button"
-                                        style="background-color: #113A5D; color: whitesmoke;">Change Password</button>
+                                </div>
+                                <div class="row py-3 px-4">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control shadow-none" id="cnewpassword"
+                                            name="username" placeholder="newpassword"
+                                            style="background-color:#e0e0e0">
+                                        <label for="floatingInput" class="ms-2"
+                                            style="mix-blend-mode: multiply;">Retype the Password</label>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="row btn-span px-5 py-3">
+                                    <button class="btn shadow py-3 px-2 rounded-4"  type="submit" id="button"
+                                    style="background-color: #113A5D; color: whitesmoke;">Change Password</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col vh-100">
-                <!-- this is personal details of profile -->
-                <div
-                    class="profile bg-body-secondary col text-center justify-content-center align-items-center mt-3 pt-3 rounded-5">
-                    <div class="row m-3">
-                        <span class=" fw-bold fs-1 ">PERSONAL DETAILS</span>
-                    </div>
-                    <table class="table text-center rounded-5" style="background-color: #fff1f1;">
-                        <tbody>
-                            <tr>
-                                <th class="py-4">First Name</th>
-                                <td class="py-4" id="firstname1">NA</td>
-                            </tr>
-                            <tr>
-                                <th class="py-4">Last Name</th>
-                                <td class="py-4" id="lastname1">NA</td>
-                            </tr>
-                            <tr>
-                                <th class="py-4">Mobileno</th>
-                                <td class="py-4" id="mobileno1">NA</td>
-                            </tr>
-                            <tr>
-                                <th class="py-4">DOB</th>
-                                <td class="py-4" id="dob1">NA</td>
-                            </tr>
-                            <tr>
-                                <th class="py-4">Address</th>
-                                <td class="py-4" id="address1">NA</td>
-                            </tr>
-                            <tr>
-                                <th class="py-4">District</th>
-                                <td class="py-4" id="district1">NA</td>
-                            </tr>
-                            <tr>
-                                <th class="py-4">Pincode</th>
-                                <td class="py-4" id="pincode1">NA</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
 
         </div>
     </div>
-
-    <!-- Modal for changing the personal details ------------------>
-    <div class="modal fade" id="target2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Profile</h1>
-                    <button type="button" class="btn-close" id="close-model" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="profile">
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="text" class="form-control shadow-none" id="firstname" name="firstname"
-                                    placeholder="name@example.com" style="background-color:#ECE6E6">
-                                <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">First
-                                    Name</label>
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="text" class="form-control shadow-none" id="lastname" name="lastname"
-                                    placeholder="name@example.com" style="background-color:#ECE6E6">
-                                <label for="floatingInput" class="ms-2" style="mix-blend-mode: multiply;">Last
-                                    Name</label>
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="text" class="form-control shadow-none" id="mobileno" name="mobileno"
-                                    placeholder="Password" style="background-color:#ECE6E6">
-                                <label for="floatingPassword" class="ms-2"
-                                    style="mix-blend-mode: multiply;">mobileno</label>
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="date" class="form-control shadow-none" id="dob" name="dob"
-                                    placeholder="Password" style="background-color:#ECE6E6">
-                                <label for="floatingPassword" class="ms-2" style="mix-blend-mode: multiply;">dob</label>
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="text" class="form-control shadow-none" id="address" name="address"
-                                    placeholder="name@example.com" style="background-color:#ECE6E6">
-                                <label for="floatingInput" class="ms-2"
-                                    style="mix-blend-mode: multiply;">LandMark</label>
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="text" class="form-control shadow-none" id="district" name="district"
-                                    placeholder="name@example.com" style="background-color:#ECE6E6">
-                                <label for="floatingInput" class="ms-2"
-                                    style="mix-blend-mode: multiply;">District</label>
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <div class="form-floating">
-                                <input type="text" class="form-control shadow-none" id="pincode" name="pincode"
-                                    placeholder="name@example.com" style="background-color:#ECE6E6">
-                                <label for="floatingInput" class="ms-2"
-                                    style="mix-blend-mode: multiply;">pincode</label>
-                            </div>
-                        </div>
-                        <div class="row btn-span px-5 py-2">
-                            <button class="btn btn-primary shadow py-3 mx-5 px-5 w-50" type="button" onclick="ts(event)" id="btn">update</button>
-                        </div>  
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
     <!--this is for create a class--------------------->
@@ -436,15 +337,113 @@
     t.style.display = 'none';
     s.style.display = 'none';
     r.style.display = 'block';
-
+            close2();
     // Set the display property of 'join' based on the condition
-    var joinElement = document.getElementById('creation');
+    var joinElement = document.getElementById('create-join');
+    joinElement.style.display = 'none';
     
 }
 function close2()
 {
 document.getElementById('close11').click();
 }
+
+
+
+
+
+function uploadImage() {
+        console.log('uploadImage');
+        var formData = new FormData();
+        var fileInput = document.getElementById('profile-image-upload');
+        formData.append('profileImage', fileInput.files[0]);
+        formData.append('uploadImage', true);
+        console.log('fileInput:', fileInput.files[0]);
+        $.ajax({
+            url: '../php_folder/profile.php',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                response = JSON.parse(response);
+                if (response.status === 200) {
+                    image();
+    
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX request failed:', status, error);
+                console.log(xhr.responseText); // Log the full response for additional details
+                alert('AJAX request failed. Please check the console for more information.');
+            }
+        });
+    }
+
+
+
+    function image() {
+    $.ajax({
+        url: '../php_folder/profile.php',
+        type: 'POST',
+        data: {
+            'profile_retrieve': true
+        },
+        success: function(response) {
+            response = JSON.parse(response);
+            if (response.status === 200) {
+                var profileImageSrc = response.data.profile ? '../userprofile/' + response.data.profile : '../image/profile_image.jpg';
+                console.log('profileImageSrc:', profileImageSrc);
+                // Set profile image src based on availability
+                if (profileImageSrc) {
+                    console.log('profileImageSrc:', profileImageSrc);
+                    document.getElementById('profile-1').src = profileImageSrc;
+                    document.getElementById('profile-2').src = profileImageSrc;
+                } else {
+                    // If profile image not available, set default image
+                    document.getElementById('profile-2').src = '../image/profile_image.jpg';
+                    document.getElementById('profile-1').src = '../image/profile_image.jpg';
+                }
+                retrival_post();
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX request failed:', status, error);
+            console.log(xhr.responseText); // Log the full response for additional details
+            alert('AJAX request failed. Please check the console for more information.');
+        }
+    });
+}
+
+$("#logout").on("click", function(e) { 
+            e.preventDefault();
+            console.log("Logging out");
+            $.ajax({
+                url: "../php_folder/login.php",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    logout: true
+                },
+                success: function(data) {
+                    if (data.status == 200) {
+                        window.location.replace("../html_folder/login.html");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    alert("Error logging out");
+                }
+            });
+        });
+
+
+        
+
+
+
     </script>
 
 </body>

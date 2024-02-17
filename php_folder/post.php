@@ -76,12 +76,25 @@ if(isset($_POST['retrieve_post']))
     $data = array();
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
+            $row['class_name'] = $classname;
+            $query2 = "SELECT * FROM comments WHERE class_name = '$classname' AND title = '".$row['title']."'";
+            $result2 = mysqli_query($con, $query2);
+            $query3 = "SELECT profile FROM users WHERE email = '".$row['email']."'";
+            $result3 = mysqli_query($con, $query3);
+            $data3 = mysqli_fetch_assoc($result3);
+            $row['profile'] = $data3['profile'];
+            $row['comments'] = array();
+            while ($comment = mysqli_fetch_assoc($result2)) {
+                $row['comments'][] = $comment;
+            }
             $data[] = $row;
+            
         }
        $res=[
         "status"=>200,
         "data"=>$data,
         "username"=>$people,
+        "userprofile"=>$data1['profile'],
         "message"=>"Data found successfully."
        ];
          echo json_encode($res);
@@ -93,5 +106,92 @@ if(isset($_POST['retrieve_post']))
            ];
              echo json_encode($res);
     }
+}
+
+
+if(isset($_POST['comment'])) {
+    $comment = $_POST['comment_data'];
+    $classname = $_POST['classname'];
+    $title = $_POST['post_title'];
+    $date = date('Y-m-d H:i:s');
+    $query1="SELECT * FROM users WHERE email = '$email'";
+    $result1 = mysqli_query($con, $query1);
+    $data1 = mysqli_fetch_assoc($result1);
+    $people = $data1['username'];
+    $profile = $data1['profile'];
+    $query = "INSERT INTO comments (email, class_name, title, comment, date,comment_name,profile) VALUES ('$email', '$classname', '$title', '$comment', '$date','$people','$profile')";
+    $result = mysqli_query($con, $query);
+    if ($result) {
+        // Comment inserted successfully
+        $res = [
+            "status" => 200,
+            "message" => "Comment inserted successfully",
+        ];
+        echo json_encode($res); // Return success status as JSON
+    } else {
+        // Error inserting comment
+        $res = [
+            "status" => 500,
+            "error" => "Error inserting comment."
+        ];
+        echo json_encode($res); // Return error status as JSON
+    }
+}
+
+
+
+if(isset($_POST['delete_post']))
+{
+    $id=$_POST['postId'];
+    $query1="SELECT * FROM class_data WHERE id = '$id'";
+    $result1 = mysqli_query($con, $query1);
+    $data1 = mysqli_fetch_assoc($result1);
+    $classname = $data1['class_name'];
+    $title = $data1['title'];
+    $query="DELETE FROM class_data WHERE id='$id'";
+    $result=mysqli_query($con,$query);
+    $query2="DELETE FROM comments WHERE class_name='$classname' AND title='$title'";
+    $result2=mysqli_query($con,$query2);
+    if($result && $result2)
+    {
+        $res=[
+            "status"=>200,
+            "message"=>"Post deleted successfully."
+        ];
+        echo json_encode($res);
+    }
+    else
+    {
+        $res=[
+            "status"=>500,
+            "message"=>"Post not deleted."
+        ];
+        echo json_encode($res);
+    }
+
+}
+
+if(isset($_POST['delete_comment']))
+{
+    $id=$_POST['commentId'];
+    $query="DELETE FROM comments WHERE id='$id'";
+    $result=mysqli_query($con,$query);
+    if($result)
+    {
+        $res=[
+            "status"=>200,
+            "message"=>"Comment deleted successfully."
+        ];
+        echo json_encode($res);
+    }
+    else
+    {
+        $res=[
+            "status"=>500,
+            "message"=>"Comment not deleted."
+        ];
+        echo json_encode($res);
+    }
+
 }
 ?>
