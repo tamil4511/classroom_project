@@ -21,16 +21,8 @@ $(document).ready(function(){
             if (!hasSymbol) {
                 message += "\n- At least 1 symbol";
             }
-            Swal.fire({
-                title: "PASSWORD IS WEAK",
-                text: message,
-                showClass: {
-                    popup: "animate__animated animate__fadeInUp animate__faster"
-                },
-                hideClass: {
-                    popup: "animate__animated animate__fadeOutDown animate__faster"
-                }
-            });
+            alertify.set('notifier','position', 'top-right');
+            alertify.warning(message);
         }else {
             var username = $("#username").val();
             var email = $("#email").val();
@@ -40,16 +32,8 @@ $(document).ready(function(){
             console.log(username + " " + email + " " + password + " " + cpassword);
             
             if (password !== cpassword) {
-                Swal.fire({
-                    title: "PASSWORD IS WEAK",
-                    text: "password is doesn't match with confirm password",
-                    showClass: {
-                        popup: "animate__animated animate__fadeInUp animate__faster"
-                    },
-                    hideClass: {
-                        popup: "animate__animated animate__fadeOutDown animate__faster"
-                    }
-                });
+                alertify.set('notifier','position', 'top-right');
+                alertify.warning('Passwords do not match');
             }
             if(password === cpassword)
             {
@@ -66,34 +50,15 @@ $(document).ready(function(){
                     success: function(response) {
                         console.log(response);
                         if (response.status ===200) {
-                            Swal.fire({
-                                title: "REGISTER SUCCESS",
-                                text: "You have been registered",
-                                icon: "success",
-                                showClass: {
-                                    popup: "animate__animated animate__fadeInUp animate__faster"
-                                },
-                                hideClass: {
-                                    popup: "animate__animated animate__fadeOutDown animate__faster"
-                                }
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = "login.html";
-                                }
-                            });
+                            alertify.set('notifier', 'position', 'top-right');
+                            alertify.success('Registered successfully');
+                    setTimeout(function() {
+                        window.location.href = "../html_folder/login.html";
+                    }, 1000); 
                         }
                          else {
-                            Swal.fire({
-                                title: "REGISTER FAILED",
-                                text: "Username or email has been used",
-                                icon: "error",
-                                showClass: {
-                                    popup: "animate__animated animate__fadeInUp animate__faster"
-                                },
-                                hideClass: {
-                                    popup: "animate__animated animate__fadeOutDown animate__faster"
-                                }
-                            });
+                            alertify.set('notifier', 'position', 'top-right');
+                            alertify.error("response.message");
                         }
                     }
                 })

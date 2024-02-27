@@ -9,7 +9,7 @@
 }
 
 
-#offcanvasScrolling
+#offcanvasScrolling , #join_model, #create_class_model , #post_content
 {
   background: rgba( 255, 255, 255, 0.35 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -138,7 +138,7 @@
   padding: 15px;
   font-weight: 800;
   font-size: 20px;
-  background-color: #384358;
+  background-color: #164863;
   border: none;
   border-radius: 20px;
   color: white;
@@ -169,4 +169,19 @@ border: 0;
 border-radius: 10px;
 }
 /*---------------------------------------------*/
+.btn {
+  width: 50%;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: #164863;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-transform: uppercase;
+}
 
+.btn:hover {
+  background-color: #072541;
+  background-position: 100% 0;
+  color: white;
+}

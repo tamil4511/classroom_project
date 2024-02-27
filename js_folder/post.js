@@ -35,7 +35,8 @@ $(document).ready(function(){
                 console.log(data);
                 if (data.status == 200) {
                     $('#post_form')[0].reset();
-                    alert("Post Created Successfully");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('post created successfully');
                     $("#post-model").click();
                     retrival_post(); // Call retrival_post() after successful post creation
                 }
@@ -64,7 +65,7 @@ $(document).ready(function(){
                     }
                     for (var i = 0; i < response.data.length; i++) {
                         var post = response.data[i];
-                        postDiv = '<div class="row-8 my-5 rounded-4 p-4" style="border: 1px solid black;">';
+                        postDiv = '<div class="row-8 my-5 rounded-4 p-4 shadow" style="border: 1px solid black;">';
                         postDiv += '<div class="row">';
                         postDiv += '<div class="col-2 col-md-1">';
                         var profileImageSrc = post.profile ? '../userprofile/' + post.profile : '../image/profile_image.jpg';
@@ -150,9 +151,7 @@ $(document).ready(function(){
                         var postsContainer = document.getElementById("postsContainer");
                         if (postsContainer) {
                             postsContainer.innerHTML += postDiv;
-                        } else {
-                            console.error("Container element with ID 'postsContainer' not found.");
-                        }
+                        } 
                     }
                     
                     // Add event listener to download buttons
@@ -179,14 +178,12 @@ $(document).ready(function(){
                     var postsContainer = document.getElementById("postsContainer");
                         if (postsContainer) {
                             postsContainer.innerHTML = '<center><h4 style="font-weight:500;">NO POSTS AVAILABLE</h4></center>';
-                        } else {
-                            console.error("Container element with ID 'postsContainer' not found.");
-                        }
+                        } 
                 }       
             },
             error: function(xhr, status, error) {
-                console.error("Error creating post:", error); // Log the error details
-                alert("Error creating post. Please try again later."); // Display a user-friendly error message
+                alertify.set('notifier','position', 'top-right');
+                    alertify.error('Error creating post. Please try again later');
             }            
         });
     }
@@ -211,12 +208,14 @@ $(document).ready(function(){
                 console.log(data);
                 if (data.status == 200) {
                     $('#comment_post')[0].reset();
-                    alert("Comment Created Successfully");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('Comment Created Successfully');
                     retrival_post(); // Call retrival_post() after successful comment creation
                 }
                 else
                 {
-                    alert("Error creating comment");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.error('Error creating comment');
                 }
             },
         });
@@ -241,12 +240,14 @@ $(document).ready(function(){
             success: function(data) {
                 console.log(data);
                 if (data.status == 200) {
-                    alert("Post deleted successfully");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('Post deleted successfully');
                     retrival_post(); // Call retrival_post() after successful post deletion
                 }
                 else
                 {
-                    alert("Error deleting post");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.error('Error deleting post');
                 }
             },
         });
@@ -266,12 +267,14 @@ $(document).ready(function(){
             success: function(data) {
                 console.log(data);
                 if (data.status == 200) {
-                    alert("Comment deleted successfully");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('Comment deleted successfully');
                     retrival_post(); // Call retrival_post() after successful comment deletion
                 }
                 else
                 {
-                    alert("Error deleting comment");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.error('Error deleting comment');
                 }
             },
         });

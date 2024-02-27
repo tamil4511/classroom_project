@@ -29,7 +29,8 @@ $(document).ready(function(){
             success: function(data) {
                 if (data.status == 200) {
                     $('#create_class')[0].reset(); // Reset the form
-                    alert("Class Created Successfully");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('class created successfully');
                     $("#close-model1").click(); // Trigger click event
                     classroom_retrieve();
                     //window.location.href = "class.php";
@@ -37,7 +38,8 @@ $(document).ready(function(){
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
-                alert("Error creating class");
+                alertify.set('notifier','position', 'top-right');
+                    alertify.error('Error creating class');
             }
         });
         
@@ -60,10 +62,25 @@ $(document).ready(function(){
             success: function(data) {
                 if (data.status == 200) {
                     $('#join_class')[0].reset();
-                    alert("Class Joined Successfully");
-                    $("#close-model2").click();
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('class joined successfully');
+                    $("#close-model").click();
                     classroom_retrieve();
                     //window.location.href = "class.php";
+                }
+                else if(data.status == 400)
+                {
+                    $('#join_class')[0].reset();
+                    $("#close-model").click();
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.error('you are already in this class');
+                }
+                else
+                {
+                    $('#join_class')[0].reset();
+                    $("#close-model").click();
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.error('class not found');
                 }
             },
             error: function(xhr, status, error) {
@@ -167,13 +184,15 @@ $(document).ready(function(){
             success: function(response) {
                 console.log(response);
                 if (response.status == 200) {
-                    alert("Unenrolled Successfully");
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('unenrolled successfully');
                     classroom_retrieve();
                 }
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
-                alert("Error unenrolling from class");
+                alertify.set('notifier','position', 'top-right');
+                alertify.error('Error unenrolling from class');
             }
         });
     });

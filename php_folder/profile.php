@@ -5,6 +5,18 @@ $email = $_SESSION['email'];
 
 if(isset($_POST['password'])) {
     $password = $_POST['newpassword'];
+    $oldpassword= $_POST['oldpassword'];
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_assoc($result);
+    if($row['password'] != $oldpassword) {
+        $res = [
+            "status" => 400,
+            "error" => "Old password is incorrect"
+        ];
+        echo json_encode($res);
+        return;
+    }
     $query = "UPDATE users SET password = '$password' WHERE email = '$email'";
     $result = mysqli_query($con, $query);
     if($result) {

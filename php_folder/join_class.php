@@ -4,6 +4,17 @@ session_start();
 $email = $_SESSION['email'];
 if(isset($_POST['join_class'])) {
     $joincode = mysqli_real_escape_string($con, $_POST['classcode']); // Sanitize input
+    $query2 = "SELECT * FROM classroom WHERE code='$joincode' AND email='$email'";
+    $result2 = mysqli_query($con, $query2);
+    if($result2 && mysqli_num_rows($result2) > 0) {
+        $res = [
+            "status" => 400,
+            "message" => "You are already a member of this class"
+        ];
+        header('Content-Type: application/json');
+        echo json_encode($res);
+        return;
+    }
     $query = "SELECT * FROM classroom WHERE code='$joincode'";
     $result = mysqli_query($con, $query);
     if($result && mysqli_num_rows($result) > 0) {

@@ -18,6 +18,17 @@
         crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" rel="stylesheet">
         
+
+
+
+
+        <!-- this is for alertify -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/alertify.min.css"/>
+        <!-- Default theme for Alertify -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/themes/default.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
+
+
          <!--------------------------jquery ---------------------------->
          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="../css_folder/home.css">
@@ -32,18 +43,18 @@
                 <img src="../image/bar.png" width="50px" height="50px" style="background-color: white;" class="rounded-circle" alt="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
             </div>
             <div class="col-6 d-flex justify-content-end align-items-center">
-                <img src="../image/profile_image.jpg" alt="" class="rounded-circle img-fluid shadow"  width="50px" height="50px" id="profile-2">
+                <img src="../image/profile_image.jpg" alt="" class="rounded-circle shadow"  width="50px" height="50px" id="profile-2">
             </div>
         </div>
 
         <div class="row" id="creation">
-            <div class="col d-flex justify-content-end"  >
+            <div class="col d-flex justify-content-end">
                 <div class="row px-5" id="create-join">
                     <div class="col" style="position: relative;">
-                        <img src="../image/plus.png" alt="" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" width="45px" height="45px">
+                        <img src="../image/plus.png" alt="" class="mt-2 shadow rounded-circle" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" width="45px" height="45px">
                         <div>
                             <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                                <table class="table table-striped">
+                                <table class="table table-striped" style="position: absolute;">
                                     <tr>
                                         <td style="padding: 1px 30px;" data-bs-toggle="modal" data-bs-target="#target4">join</td>
                                     </tr>
@@ -150,7 +161,7 @@
       <div class="container mt-4  vh-100" id="contain-3">
         <div class="row">
             <div class="col col-lg-5">
-                <div class="text-center bg-body-secondary rounded-5">
+                <div class="text-center bg-body-secondary rounded-5 mb-5">
                     <div class="d-flex justify-content-center pt-4">
                         <section style="position: relative;" class="d-flex justify-content-center">
                             <form action="" id="image_upload" enctype="multipart/form-data">
@@ -163,14 +174,12 @@
                                 <h6 class="my-2 p-3" style="color:red">NOTE:<span style="color:black">select the image using + sign, then click the upload button</span></h6>
 
                                 <input type="file" id="profile-image-upload" name="profileImage" style="display: none;" />
-                                <button type="button" onclick="uploadImage()" style="background-color: #113A5D; color: whitesmoke;" class="rounded-2 p-2">Upload Image</button>
+                                <button type="button" onclick="uploadImage()" style="background-color: #113A5D; color: whitesmoke;" class="rounded-2 p-2 mb-4">Upload Image</button>
                             </form>
                             
                             
                         </section>
                     </div>
-                    <h1 class="pt-3" id="user-name"></h1>
-                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#target2" style="background-color: #113A5D; color: whitesmoke;">Edit Profile</button>
                 </div>
             </div>
             <div class="col-12 col-md-6">
@@ -217,7 +226,7 @@
                                 </div>
                                 <div class="row btn-span px-5 py-3">
                                     <button class="btn shadow py-3 px-2 rounded-4"  type="submit" id="button"
-                                    style="background-color: #113A5D; color: whitesmoke;">Change Password</button>
+                                    style="background-color: #164863; color: whitesmoke;">Change Password</button>
                                 </div>
                             </form>
                         </div>
@@ -233,7 +242,7 @@
     <div class="modal fade" id="target3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
+            <div class="modal-content" id="create_class_model">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Class</h1>
                     <button type="button" class="btn-close" id="close-model1" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -255,7 +264,7 @@
                             </div>
                         </div>
                         <div class="row btn-span px-5 py-2">
-                            <button class="btn btn-primary shadow py-3 mx-5 px-5 w-50" type="submit"  id="btn">create</button>
+                            <button class="btn shadow py-3 mx-5 px-5 w-50" type="submit"  id="btn">create</button>
                         </div>  
                     </form>
                 </div>
@@ -267,7 +276,7 @@
     <div class="modal fade" id="target4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
+            <div class="modal-content" id="join_model">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Join Class</h1>
                     <button type="button" class="btn-close" id="close-model" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -295,7 +304,7 @@
     <div class="modal fade" id="target5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
+            <div class="modal-content" id="post_content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">POST</h1>
                     <button type="button" class="btn-close" id="post-model" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -337,10 +346,10 @@
     t.style.display = 'none';
     s.style.display = 'none';
     r.style.display = 'block';
-            close2();
-    // Set the display property of 'join' based on the condition
-    var joinElement = document.getElementById('create-join');
-    joinElement.style.display = 'none';
+    close2();
+    // // Set the display property of 'join' based on the condition
+    // var joinElement = document.getElementById('create-join');
+    // joinElement.style.display = 'none';
     
 }
 function close2()
@@ -371,7 +380,9 @@ function uploadImage() {
                     image();
     
                 } else {
-                    alert(response.message);
+                    alertify.set('notifier', 'position', 'top-right');
+                    alertify.error('Image upload failed');
+                    
                 }
             },
             error: function(xhr, status, error) {
@@ -430,11 +441,15 @@ $("#logout").on("click", function(e) {
                 success: function(data) {
                     if (data.status == 200) {
                         window.location.replace("../html_folder/login.html");
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.success('Logout successful');
                     }
                 },
                 error: function(xhr, status, error) {
                     console.error(xhr.responseText);
-                    alert("Error logging out");
+                    alertify.set('notifier', 'position', 'top-right');
+                    alertify.error('Logout failed');
+                     
                 }
             });
         });
