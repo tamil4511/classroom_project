@@ -1,6 +1,6 @@
-# Classroom Management System
+# Classroom_project
 
-Welcome to the Classroom Management System, a web application designed to facilitate classroom interactions, document sharing, and collaboration among users. This platform provides a seamless environment for educators and students to engage in productive academic discussions and resource sharing.
+ A web application designed to facilitate classroom interactions, document sharing, and collaboration among users. This platform provides a seamless environment for educators and students to engage in productive academic discussions and resource sharing.
 
 ## Key Features
 
@@ -46,5 +46,5 @@ We welcome contributions from the community to enhance the functionality and usa
 
 ## Contributors
 
-- [TAMILARASU](https://github.com/tamil4511) - Main Developer
+- [TAMILARASU E R](https://github.com/tamil4511) - Main Developer
 
