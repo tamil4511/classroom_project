@@ -1,14 +1,14 @@
-# Classroom_project
+# 🎓 Classroom_project
 
- A web application designed to facilitate classroom interactions, document sharing, and collaboration among users. This platform provides a seamless environment for educators and students to engage in productive academic discussions and resource sharing.
+A web application designed to facilitate classroom interactions, document sharing, and collaboration among users. This platform provides a seamless environment for educators and students to engage in productive academic discussions and resource sharing.
 
 ## Key Features
 
-- **User Authentication**: Secure authentication system allows users to register, log in, and manage their accounts.
+- **User Authentication**: 🔒 Secure authentication system allows users to register, log in, and manage their accounts.
   
 - **Class Management**:
-  - **Create Class**: Teachers can create new classes, specifying details such as class name, description, and subject.
-  - **Join Class**: Students can join existing classes by entering unique class codes provided by the teacher.
+  - **Create Class**: 🏫 Teachers can create new classes, specifying details such as class name, description, and subject.
+  - **Join Class**: 🚪 Students can join existing classes by entering unique class codes provided by the teacher.
   
 - **Document Sharing**:
   - Users can upload and share documents relevant to their classes, including lecture notes, assignments, and supplementary materials.
@@ -47,4 +47,3 @@ We welcome contributions from the community to enhance the functionality and usa
 ## Contributors
 
 - [TAMILARASU E R](https://github.com/tamil4511) - Main Developer
-
